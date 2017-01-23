@@ -1,7 +1,7 @@
 /**
  *
  */
-package com.bupt.lcy.search;
+package com.mallow.search;
 
 /**
  * Title: BinarySearch

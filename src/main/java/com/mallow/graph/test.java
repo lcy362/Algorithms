@@ -1,4 +1,4 @@
-package com.bupt.lcy.graph;
+package com.mallow.graph;
 
 /**
  * Title:

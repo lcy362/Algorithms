@@ -1,4 +1,4 @@
-package com.bupt.lcy.algorithm;
+package com.mallow.algorithm;
 
 /**
  * Title:最长公共子序列

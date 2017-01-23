@@ -1,6 +1,6 @@
-package com.bupt.lcy.search;
+package com.mallow.search;
 
-import com.bupt.lcy.util.ArrayUtil;
+import com.mallow.util.ArrayUtil;
 
 /**
  * Title:

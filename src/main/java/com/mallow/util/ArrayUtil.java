@@ -1,4 +1,4 @@
-package com.bupt.lcy.util;
+package com.mallow.util;
 
 /**
  * Title:

@@ -1,6 +1,7 @@
-package com.bupt.lcy.sort;
+package com.mallow.sort;
 
-import com.bupt.lcy.util.ArrayUtil;
+
+import com.mallow.util.ArrayUtil;
 
 /**
  * Title:
