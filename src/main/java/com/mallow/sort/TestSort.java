@@ -12,11 +12,11 @@ import com.mallow.util.ArrayUtil;
  * @since JDK 1.6
  */
 public class TestSort {
-   public static void main(String args[]){
-      Integer[] a={8,6,3,9,2,7,5};
+    public static void main(String args[]) {
+        Integer[] a = {8, 6, 3, 9, 2, 7, 5};
 //      BubbleSort.bubblesort(a);
 //      MergeSort.mergeSort(a);
-      ShellSort.shellSort(a);
-      ArrayUtil.print(a);
-   }
+        ShellSort.shellSort(a);
+        ArrayUtil.print(a);
+    }
 }

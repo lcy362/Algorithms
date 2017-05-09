@@ -10,60 +10,60 @@ package com.mallow.string;
  * @since JDK 1.6
  */
 public class EditDistance {
-   public static void main(String args[]){
+    public static void main(String args[]) {
 
-      String a="asdfghjkl";
-      String b="asdfhjkl";
-      System.out.println(recursionMethod(a,0,a.length()-1,b,0,b.length()-1));
+        String a = "asdfghjkl";
+        String b = "asdfhjkl";
+        System.out.println(recursionMethod(a, 0, a.length() - 1, b, 0, b.length() - 1));
 
 
-   }
+    }
 
-   public static int recursionMethod(String a,int aStart,int aEnd,String b,int bStart,int bEnd){
-      for (int i=aStart;i<=aEnd;i++){
-         System.out.print(a.charAt(i));
-      }
-      System.out.print("::");
-      for (int i=bStart;i<=bEnd;i++){
-         System.out.print(b.charAt(i));
-      }
-      System.out.println();
-      if (aStart>aEnd){
-         if (bStart>bEnd){
-            return 0;
-         }else {
-            return bEnd-bStart;
-         }
-      }
+    public static int recursionMethod(String a, int aStart, int aEnd, String b, int bStart, int bEnd) {
+        for (int i = aStart; i <= aEnd; i++) {
+            System.out.print(a.charAt(i));
+        }
+        System.out.print("::");
+        for (int i = bStart; i <= bEnd; i++) {
+            System.out.print(b.charAt(i));
+        }
+        System.out.println();
+        if (aStart > aEnd) {
+            if (bStart > bEnd) {
+                return 0;
+            } else {
+                return bEnd - bStart;
+            }
+        }
 
-      if (bStart>bEnd){
-         if (aStart>aEnd){
-            return 0;
-         }else {
-            return aEnd-aStart;
-         }
-      }
+        if (bStart > bEnd) {
+            if (aStart > aEnd) {
+                return 0;
+            } else {
+                return aEnd - aStart;
+            }
+        }
 
-      if (a.charAt(aStart)==b.charAt(bStart)){
-         return recursionMethod(a, aStart+1, aEnd, b, bStart+1, bEnd);
-      }else {
-         return min(recursionMethod(a, aStart+1, aEnd, b, bStart, bEnd),recursionMethod(a, aStart, aEnd, b, bStart+1, bEnd),recursionMethod(a, aStart+1, aEnd, b, bStart+1, bEnd))+1;
-      }
-   }
+        if (a.charAt(aStart) == b.charAt(bStart)) {
+            return recursionMethod(a, aStart + 1, aEnd, b, bStart + 1, bEnd);
+        } else {
+            return min(recursionMethod(a, aStart + 1, aEnd, b, bStart, bEnd), recursionMethod(a, aStart, aEnd, b, bStart + 1, bEnd), recursionMethod(a, aStart + 1, aEnd, b, bStart + 1, bEnd)) + 1;
+        }
+    }
 
-   public static int min(int a,int b,int c){
-      if (a<b){
-         if (a<c){
-            return a;
-         }else {
-            return c;
-         }
-      }else {
-         if (b<c){
-            return b;
-         }else {
-            return c;
-         }
-      }
-   }
+    public static int min(int a, int b, int c) {
+        if (a < b) {
+            if (a < c) {
+                return a;
+            } else {
+                return c;
+            }
+        } else {
+            if (b < c) {
+                return b;
+            } else {
+                return c;
+            }
+        }
+    }
 }

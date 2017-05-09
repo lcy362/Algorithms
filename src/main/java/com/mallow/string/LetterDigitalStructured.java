@@ -3,7 +3,7 @@ package com.mallow.string;
 /**
  * input a string , like "dfdd3432ds", which contains only letter and digital
  * move all letters to left and digits to right
- *
+ * <p>
  * traverse from both ends to the center, swap first left digital and first right letter
  * Created by lcy on 2017/1/23.
  */
@@ -45,10 +45,10 @@ public class LetterDigitalStructured {
     }
 
     public static boolean isLetter(char x) {
-        if (x >= 'a' && x<= 'z') {
+        if (x >= 'a' && x <= 'z') {
             return true;
         }
-        if (x >= 'A' && x<= 'Z') {
+        if (x >= 'A' && x <= 'Z') {
             return true;
         }
         return false;
