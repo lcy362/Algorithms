@@ -1,4 +1,4 @@
 Algorithms
 ==========
 
-some practise on basic algorithms with java
+Some practise on basic algorithms with java
