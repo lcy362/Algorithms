@@ -9,6 +9,7 @@ package com.mallow.tree;
  * @since JDK 1.6
  */
 public class Node {
+
     private String data;
     private Node left;
     private Node right;
