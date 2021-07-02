@@ -16,6 +16,14 @@ public class ArrayUtil {
         System.out.println();
     }
 
+    public static void print(char[] a) {
+        for (int i = 0; i < a.length; i++) {
+            System.out.print(a[i] + ",");
+        }
+        System.out.println();
+    }
+
+
     public static void swap(Integer[] a, int low, int high) {
         int temp = a[low];
         a[low] = a[high];
