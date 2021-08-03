@@ -31,12 +31,7 @@ public class LRUCache {
     public int get(int key) {
         if (data.containsKey(key)) {
             Node node = data.get(key);
-            node.prev.next = node.next;
-            node.next.prev = node.prev;
-            node.next = head.next;
-            node.prev = head;
-            node.next.prev = node;
-            head.next = node;
+            moveToHead(node);
             return node.value;
         } else {
             return -1;
@@ -46,34 +41,45 @@ public class LRUCache {
     public void put(int key, int value) {
         Node node = data.get(key);
         if (node == null) {
-           node = new Node();
-           node.key = key;
-           node.value = value;
-           node.next = head.next;
-           node.prev = head;
-           node.next.prev = node;
-           head.next = node;
-           data.put(key, node);
+           data.put(key, addNodeToHead(key, value));
            size++;
            if (size > capacity) {
-               Node newLast = tail.prev.prev;
-               Node last = tail.prev;
-               last.prev = null;
-               last.next = null;
-               newLast.next = tail;
-               tail.prev = newLast;
-               data.remove(last.key);
-
+               data.remove(removeTail());
            }
         } else {
-            node.prev.next = node.next;
-            node.next.prev = node.prev;
             node.value = value;
-            node.next = head.next;
-            node.prev = head;
-            node.next.prev = node;
-            head.next = node;
+            moveToHead(node);
         }
+    }
+
+    private int removeTail() {
+        Node newLast = tail.prev.prev;
+        Node last = tail.prev;
+        last.prev = null;
+        last.next = null;
+        newLast.next = tail;
+        tail.prev = newLast;
+        return last.key;
+    }
+
+    private void moveToHead(Node node) {
+        node.prev.next = node.next;
+        node.next.prev = node.prev;
+        node.next = head.next;
+        node.prev = head;
+        node.next.prev = node;
+        head.next = node;
+    }
+
+    private Node addNodeToHead(int key, int value) {
+        Node node = new Node();
+        node.key = key;
+        node.value = value;
+        node.next = head.next;
+        node.prev = head;
+        node.next.prev = node;
+        head.next = node;
+        return node;
     }
 
     public class Node {
