@@ -13,6 +13,7 @@ import java.util.List;
 
 /**
  * @author licy03
+ * 全排列
  */
 public class LCode46 {
 
