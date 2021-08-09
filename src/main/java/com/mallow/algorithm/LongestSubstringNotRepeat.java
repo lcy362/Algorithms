@@ -40,6 +40,7 @@ public class LongestSubstringNotRepeat {
 
     public static void main(String args[]) {
         LongestSubstringNotRepeat l = new LongestSubstringNotRepeat();
+        System.out.println(l.lengthOfLongestSubstring("abcdbcbb"));
         System.out.println(l.lengthOfLongestSubstring("abcabcbb"));
         System.out.println(l.lengthOfLongestSubstring("bbbbb"));
         System.out.println(l.lengthOfLongestSubstring("pwwkew"));
