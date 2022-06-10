@@ -1,5 +1,8 @@
 package com.mallow.tree;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 /**
  * Title:
  * Description:
@@ -20,6 +23,10 @@ public class Traverse {
         inOrder(head);
         System.out.println();
         postOrder(head);
+        System.out.println();
+        preOrderWithStack(head);
+        System.out.println();
+        inOrderWithStack(head);
     }
 
     public static void preOrder(Node node) {
@@ -52,4 +59,44 @@ public class Traverse {
         postOrder(node.getRight());
         System.out.print(node.getData() + " ");
     }
+
+    public static void preOrderWithStack(Node root) {
+        if (root == null) {
+            return;
+        }
+        Deque<Node> stack = new ArrayDeque<>();
+        stack.push(root);
+        while (!stack.isEmpty()) {
+            Node node = stack.pop();
+            System.out.print(node.getData() + " ");
+            if (node.getRight() != null) {
+                stack.push(node.getRight());
+            }
+            if (node.getLeft() != null) {
+                stack.push(node.getLeft());
+            }
+        }
+    }
+
+    public static void inOrderWithStack(Node root) {
+        if (root == null) {
+            return;
+        }
+        Deque<Node> stack = new ArrayDeque<>();
+        while (root != null || !stack.isEmpty()) {
+            while (root != null) {
+                stack.push(root);
+                root = root.getLeft();
+            }
+            if (!stack.isEmpty()) {
+                Node node = stack.pop();
+                System.out.print(node.getData() + " ");
+                if (node.getRight() != null) {
+                    root = node.getRight();
+                }
+            }
+        }
+    }
+
+
 }
