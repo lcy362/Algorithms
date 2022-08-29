@@ -14,7 +14,7 @@ import java.util.Deque;
 public class Traverse {
 
     public static void main(String args[]) {
-        Node head = new Node("head");
+        TreeNode head = new TreeNode("head");
         Tree tree = new Tree(head);
         head = tree.getHead();
 
@@ -29,35 +29,35 @@ public class Traverse {
         inOrderWithStack(head);
     }
 
-    public static void preOrder(Node node) {
-        if (node == null) {
+    public static void preOrder(TreeNode treeNode) {
+        if (treeNode == null) {
             return;
         }
-        System.out.print(node.getData() + " ");
-        preOrder(node.getLeft());
-        preOrder(node.getRight());
+        System.out.print(treeNode.getData() + " ");
+        preOrder(treeNode.getLeft());
+        preOrder(treeNode.getRight());
 
     }
 
-    public static void inOrder(Node node) {
-        if (node == null) {
+    public static void inOrder(TreeNode treeNode) {
+        if (treeNode == null) {
             return;
         }
 
-        inOrder(node.getLeft());
-        System.out.print(node.getData() + " ");
-        inOrder(node.getRight());
+        inOrder(treeNode.getLeft());
+        System.out.print(treeNode.getData() + " ");
+        inOrder(treeNode.getRight());
     }
 
-    public static void postOrder(Node node) {
-        if (node == null) {
+    public static void postOrder(TreeNode treeNode) {
+        if (treeNode == null) {
             return;
         }
 
-        postOrder(node.getLeft());
+        postOrder(treeNode.getLeft());
 
-        postOrder(node.getRight());
-        System.out.print(node.getData() + " ");
+        postOrder(treeNode.getRight());
+        System.out.print(treeNode.getData() + " ");
     }
 
     public static void preOrderWithStack(Node root) {

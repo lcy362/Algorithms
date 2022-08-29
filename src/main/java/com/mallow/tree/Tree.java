@@ -9,19 +9,19 @@ package com.mallow.tree;
  * @since JDK 1.6
  */
 public class Tree {
-    private Node head;
+    private TreeNode head;
 
-    public Tree(Node head) {
+    public Tree(TreeNode head) {
         this.head = head;
-        Node a = new Node("a");
-        Node b = new Node("b");
-        Node c = new Node("c");
-        Node d = new Node("d");
-        Node e = new Node("e");
-        Node f = new Node("f");
-        Node g = new Node("g");
-        Node h = new Node("h");
-        Node i = new Node("i");
+        TreeNode a = new TreeNode("a");
+        TreeNode b = new TreeNode("b");
+        TreeNode c = new TreeNode("c");
+        TreeNode d = new TreeNode("d");
+        TreeNode e = new TreeNode("e");
+        TreeNode f = new TreeNode("f");
+        TreeNode g = new TreeNode("g");
+        TreeNode h = new TreeNode("h");
+        TreeNode i = new TreeNode("i");
 
         this.head.setLeft(a);
         this.head.setRight(b);
@@ -35,7 +35,7 @@ public class Tree {
 
     }
 
-    public Node getHead() {
+    public TreeNode getHead() {
         return head;
     }
 }
