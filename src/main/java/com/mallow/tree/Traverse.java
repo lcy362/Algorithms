@@ -60,14 +60,14 @@ public class Traverse {
         System.out.print(treeNode.getData() + " ");
     }
 
-    public static void preOrderWithStack(Node root) {
+    public static void preOrderWithStack(TreeNode root) {
         if (root == null) {
             return;
         }
-        Deque<Node> stack = new ArrayDeque<>();
+        Deque<TreeNode> stack = new ArrayDeque<>();
         stack.push(root);
         while (!stack.isEmpty()) {
-            Node node = stack.pop();
+            TreeNode node = stack.pop();
             System.out.print(node.getData() + " ");
             if (node.getRight() != null) {
                 stack.push(node.getRight());
@@ -78,18 +78,18 @@ public class Traverse {
         }
     }
 
-    public static void inOrderWithStack(Node root) {
+    public static void inOrderWithStack(TreeNode root) {
         if (root == null) {
             return;
         }
-        Deque<Node> stack = new ArrayDeque<>();
+        Deque<TreeNode> stack = new ArrayDeque<>();
         while (root != null || !stack.isEmpty()) {
             while (root != null) {
                 stack.push(root);
                 root = root.getLeft();
             }
             if (!stack.isEmpty()) {
-                Node node = stack.pop();
+                TreeNode node = stack.pop();
                 System.out.print(node.getData() + " ");
                 if (node.getRight() != null) {
                     root = node.getRight();
