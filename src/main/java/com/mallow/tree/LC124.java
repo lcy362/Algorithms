@@ -28,6 +28,7 @@ public class LC124 {
         TreeNode node2 = new TreeNode(20);
         TreeNode node3 = new TreeNode(15);
         TreeNode node4 = new TreeNode(7);
+
         root.setLeft(node1);
         root.setRight(node2);
         node2.setLeft(node3);
